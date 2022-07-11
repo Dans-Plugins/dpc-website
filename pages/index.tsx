@@ -10,12 +10,15 @@ const Home: NextPage = () => (
         </Typography>
       </Toolbar>
     </AppBar>
+
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="140"
         image="/mf-icon.png"
-        alt="Medieval Factions icon (it&apos;s a castle)" />
+        alt="Medieval Factions icon"
+        height="250"
+        width="250"
+        />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Medieval Factions
@@ -25,7 +28,55 @@ const Home: NextPage = () => (
         </Typography>
       </CardContent>
       <CardActions>
+      <Button size="small" href="https://github.com/Dans-Plugins/Medieval-Factions">GitHub</Button>
         <Button size="small" href="https://www.spigotmc.org/resources/medieval-factions.79941/">SpigotMC</Button>
+        <Button size="small" href="https://github.com/Dans-Plugins/Medieval-Factions/releases/latest">Download</Button>
+      </CardActions>
+    </Card>
+
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        image="/mre-icon.png"
+        alt="Medieval Roleplay Engine icon"
+        height="250"
+        width="250"
+        />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Medieval Roleplay Engine
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        This Minecraft plugin facilitates roleplay between players.
+        </Typography>
+      </CardContent>
+      <CardActions>
+      <Button size="small" href="https://github.com/Dans-Plugins/Medieval-Roleplay-Engine">GitHub</Button>
+        <Button size="small" href="https://www.spigotmc.org/resources/medieval-roleplay-engine.79993/">SpigotMC</Button>
+        <Button size="small" href="https://github.com/Dans-Plugins/Medieval-Roleplay-Engine/releases/latest">Download</Button>
+      </CardActions>
+    </Card>
+
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        image="/fs-icon.png"
+        alt="Food Spoilage icon"
+        height="250"
+        width="250"
+        />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Food Spoilage
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        This Minecraft plugin makes food items turn into rotten flesh after a certain period of time. 
+        </Typography>
+      </CardContent>
+      <CardActions>
+      <Button size="small" href="https://github.com/Dans-Plugins/FoodSpoilage">GitHub</Button>
+        <Button size="small" href="https://www.spigotmc.org/resources/food-spoilage.81507/">SpigotMC</Button>
+        <Button size="small" href="https://github.com/Dans-Plugins/FoodSpoilage/releases/latest">Download</Button>
       </CardActions>
     </Card>
   </>

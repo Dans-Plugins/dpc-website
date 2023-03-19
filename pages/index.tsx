@@ -10,7 +10,7 @@ const Home: NextPage = () => (
         </Typography>
         <Button color="inherit" href="https://github.com/Dans-Plugins">(GitHub)</Button>
         <Button color="inherit" href="https://discord.gg/xXtuAQ2">(Discord)</Button>
-        <Button color="inherit" href="https://gitub.com/Dans-Plugins/dpc-website">(Source)</Button>
+        <Button color="inherit" href="https://github.com/Dans-Plugins/dpc-website">(Source Code)</Button>
       </Toolbar>
     </AppBar>
 

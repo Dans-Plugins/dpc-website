@@ -58,7 +58,7 @@ const Home: NextPage = () => (
     <Card sx={{ maxWidth: 250, m: 5 }}>
       <CardMedia component="img" image="/icons/de.png" alt="dan's essentials icon" height="250" width="250"/>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">Dan's Essentials</Typography>
+        <Typography gutterBottom variant="h5" component="div">Dan&apos;s Essentials</Typography>
         <Typography variant="body2" color="text.secondary">Provides miscellaneous commands.</Typography>
       </CardContent>
       <CardActions>
@@ -69,8 +69,8 @@ const Home: NextPage = () => (
     <Card sx={{ maxWidth: 250, m: 5 }}>
       <CardMedia component="img" image="/icons/dpm.png" alt="dan's plugin manager icon" height="250" width="250"/>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">Dan's Plugin Manager</Typography>
-        <Typography variant="body2" color="text.secondary">Allows operators to easily download the community's plugins in-game or through a server console.</Typography>
+        <Typography gutterBottom variant="h5" component="div">Dan&apos;s Plugin Manager</Typography>
+        <Typography variant="body2" color="text.secondary">Allows operators to easily download the community&apos;s plugins in-game or through a server console.</Typography>
       </CardContent>
       <CardActions>
         <Button size="small" href="https://github.com/Dans-Plugins/Dans-Plugin-Manager">GitHub</Button>
@@ -80,7 +80,7 @@ const Home: NextPage = () => (
     <Card sx={{ maxWidth: 250, m: 5 }}>
       <CardMedia component="img" image="/icons/dsh.png" alt="dan's set home icon" height="250" width="250"/>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">Dan's Set Home</Typography>
+        <Typography gutterBottom variant="h5" component="div">Dan&apos;s Set Home</Typography>
         <Typography variant="body2" color="text.secondary">Allows players to set and teleport to home locations.</Typography>
       </CardContent>
       <CardActions>
@@ -91,7 +91,7 @@ const Home: NextPage = () => (
     <Card sx={{ maxWidth: 250, m: 5 }}>
       <CardMedia component="img" image="/icons/dss.png" alt="dan's spawn system icon" height="250" width="250"/>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">Dan's Spawn System</Typography>
+        <Typography gutterBottom variant="h5" component="div">Dan&apos;s Spawn System</Typography>
         <Typography variant="body2" color="text.secondary">Allows players to use signs to select a custom spawn in their world.</Typography>
       </CardContent>
     </Card>
@@ -143,7 +143,7 @@ const Home: NextPage = () => (
       <CardContent>
       <Typography>(image coming soon)</Typography>
         <Typography gutterBottom variant="h5" component="div">KDRTracker</Typography>
-        <Typography variant="body2" color="text.secondary">Intended to keep track of players' kill/death ratios. </Typography>
+        <Typography variant="body2" color="text.secondary">Intended to keep track of players&apos; kill/death ratios. </Typography>
       </CardContent>
       <CardActions>
         <Button size="small" href="https://github.com/Dans-Plugins/KDRTracker">GitHub</Button>

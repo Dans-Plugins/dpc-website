@@ -20,6 +20,64 @@ const Home: NextPage = () => (
       </Typography>
     </Box>
 
+    <Typography variant="h3" component="div" gutterBottom>
+      Most Popular Plugins
+    </Typography>
+
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        Medieval Factions
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Allows players to organize themselves into feudal, diplomatic, lawful groups akin to nations.
+      </Typography>
+      <Button variant="contained" href="https://github.com/Dans-Plugins/Medieval-Factions">GitHub</Button>
+    </Box>
+
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        Medieval Roleplay Engine
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Facilitates roleplay between players.
+      </Typography>
+      <Button variant="contained" href="https://github.com/Dans-Plugins/Medieval-Roleplay-Engine">GitHub</Button>
+    </Box>
+  
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        FoodSpoilage
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Makes food items turn into rotten flesh after a certain period of time.
+      </Typography>
+      <Button variant="contained" href="https://github.com/Dans-Plugins/FoodSpoilage">GitHub</Button>
+    </Box>
+    
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        Wild Pets
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Allows players to tame any entity and keep them as a pet.
+      </Typography>
+      <Button variant="contained" href="https://github.com/Dans-Plugins/Wild-Pets">GitHub</Button>
+    </Box>
+
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h5" component="div" gutterBottom>
+        Currencies
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        An expansion for Medieval Factions that allows faction owners to create and mint local currencies.
+      </Typography>
+      <Button variant="contained" href="https://github.com/Dans-Plugins/Currencies">GitHub</Button>
+    </Box>
+
+
+    <Typography variant="h3" component="div" gutterBottom>
+      All Plugins
+    </Typography>
     <Box sx={{ flexGrow: 1, p: 2 }}>
       <Typography variant="h5" component="div" gutterBottom>
         Activity Tracker

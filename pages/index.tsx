@@ -1,50 +1,8 @@
-import { AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, Grid, Link, Toolbar, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import type { NextPage } from 'next'
-
-// declare react component for top bar
-const TopBar: React.FC = () => (
-  <AppBar position="static">
-  <Toolbar>
-    <Typography variant="h6" color="inherit" component="div">
-      Dan&apos;s Plugins Community
-    </Typography>
-    <Button color="inherit" href="https://github.com/Dans-Plugins">(GitHub)</Button>
-    <Button color="inherit" href="https://discord.gg/xXtuAQ2">(Discord)</Button>
-    <Button color="inherit" href="https://github.com/Dans-Plugins/dpc-website">(Source Code)</Button>
-  </Toolbar>
-</AppBar>
-)
-
-// declare react component for blurb
-const Blurb: React.FC = () => (
-  <Box sx={{ flexGrow: 1, p: 2 }}>
-    <Typography variant="body1" gutterBottom>
-      Welcome to the Dan&apos;s Plugins Community website! This website is a hub for all of the plugins that are maintained by the community. If you&apos;d like to contribute, please visit the relevant GitHub repository.
-    </Typography>
-  </Box>
-)
-
-// declare react component for generic plugin box with title, description, and github link props
-interface PluginCardProps {
-  title: string
-  description: string
-  githubLink: string
-}
-const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink }) => (
-  <Card>
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        {title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        {description}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button variant="contained" size="small" component={Link} href={githubLink}>GitHub</Button>
-    </CardActions>
-  </Card>
-)
+import TopBar from '../components/topBar'
+import Blurb from '../components/blurb'
+import PluginCard from '../components/pluginCard'
 
 // declare react component for each plugin A-Z
 const ActivityTracker: React.FC = () => (

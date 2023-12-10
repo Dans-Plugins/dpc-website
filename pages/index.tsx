@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Card, CardActions, CardContent, CardMedia, Grid, Link, Toolbar, Typography } from '@mui/material'
 import type { NextPage } from 'next'
 
 // declare react component for top bar
@@ -25,26 +25,30 @@ const Blurb: React.FC = () => (
 )
 
 // declare react component for generic plugin box with title, description, and github link props
-interface PluginBoxProps {
+interface PluginCardProps {
   title: string
   description: string
   githubLink: string
 }
-const PluginBox: React.FC<PluginBoxProps> = ({ title, description, githubLink }) => (
-  <Box sx={{ flexGrow: 1, p: 2 }}>
-    <Typography variant="h5" component="div" gutterBottom>
-      {title}
-    </Typography>
-    <Typography variant="body1" gutterBottom>
-      {description}
-    </Typography>
-    <Button variant="contained" href={githubLink}>GitHub</Button>
-  </Box>
+const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink }) => (
+  <Card>
+    <CardContent>
+      <Typography gutterBottom variant="h5" component="div">
+        {title}
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        {description}
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button variant="contained" size="small" component={Link} href={githubLink}>GitHub</Button>
+    </CardActions>
+  </Card>
 )
 
 // declare react component for each plugin A-Z
 const ActivityTracker: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Activity Tracker"
     description="Tracks the activity of players."
     githubLink="https://github.com/Dans-Plugins/Activity-Tracker"
@@ -52,7 +56,7 @@ const ActivityTracker: React.FC = () => (
 )
 
 const AlternateAccountFinder: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Alternate Account Finder"
     description="Identifies accounts that have used the same IP address."
     githubLink="https://github.com/Dans-Plugins/AlternateAccountFinder"
@@ -60,7 +64,7 @@ const AlternateAccountFinder: React.FC = () => (
 )
 
 const ConquestRecipes: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Conquest Recipes"
     description="Adds recipes for the many item textures that the Conquest Resource Pack adds to the game."
     githubLink="https://github.com/Dans-Plugins/Conquest-Recipes"
@@ -68,7 +72,7 @@ const ConquestRecipes: React.FC = () => (
 )
 
 const Currencies: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Currencies"
     description="An expansion for Medieval Factions that allows faction owners to create and mint local currencies."
     githubLink="https://github.com/Dans-Plugins/Currencies"
@@ -76,7 +80,7 @@ const Currencies: React.FC = () => (
 )
 
 const DansEssentials: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Dan's Essentials"
     description="Provides miscellaneous commands."
     githubLink="https://github.com/Dans-Plugins/Dans-Essentials"
@@ -84,7 +88,7 @@ const DansEssentials: React.FC = () => (
 )
 
 const DansPluginManager: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Dan's Plugin Manager"
     description="Allows operators to easily download the community's plugins in-game or through a server console."
     githubLink="https://github.com/Dans-Plugins/Dans-Plugin-Manager"
@@ -92,7 +96,7 @@ const DansPluginManager: React.FC = () => (
 )
 
 const DansSetHome: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Dan's Set Home"
     description="Allows players to set and teleport to home locations."
     githubLink="https://github.com/Dans-Plugins/Dans-Set-Home"
@@ -100,7 +104,7 @@ const DansSetHome: React.FC = () => (
 )
 
 const DansSpawnSystem: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Dan's Spawn System"
     description="Allows players to use signs to select a custom spawn in their world."
     githubLink="https://github.com/Dans-Plugins/Dans-Spawn-System"
@@ -108,7 +112,7 @@ const DansSpawnSystem: React.FC = () => (
 )
 
 const Democracy: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Democracy"
     description="An expansion for MF that aims to allow nations to be democratic."
     githubLink="https://github.com/Dans-Plugins/Democracy"
@@ -116,7 +120,7 @@ const Democracy: React.FC = () => (
 )
 
 const EasyLinks: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Easy Links"
     description="Allows players to view relevant links with simple commands."
     githubLink="https://github.com/Dans-Plugins/Easy-Links"
@@ -124,7 +128,7 @@ const EasyLinks: React.FC = () => (
 )
 
 const Fiefs: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Fiefs"
     description="Allows players to create fiefs and manage them."
     githubLink="https://github.com/Dans-Plugins/Fiefs"
@@ -132,7 +136,7 @@ const Fiefs: React.FC = () => (
 )
 
 const FoodSpoilage: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="FoodSpoilage"
     description="Makes food items turn into rotten flesh after a certain period of time."
     githubLink="https://github.com/Dans-Plugins/FoodSpoilage"
@@ -140,7 +144,7 @@ const FoodSpoilage: React.FC = () => (
 )
 
 const KDRTracker: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="KDRTracker"
     description="Keeps track of players' kill/death ratios."
     githubLink="https://github.com/Dans-Plugins/KDRTracker"
@@ -148,7 +152,7 @@ const KDRTracker: React.FC = () => (
 )
 
 const Mailboxes: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Mailboxes"
     description="Allows players and plugins to send persistent messages to players."
     githubLink="https://github.com/Dans-Plugins/Mailboxes"
@@ -156,7 +160,7 @@ const Mailboxes: React.FC = () => (
 )
 
 const MedievalCookery: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Medieval Cookery"
     description="Allows server owners to add cooking recipes for an enhanced roleplay experience."
     githubLink="https://github.com/Dans-Plugins/Medieval-Cookery"
@@ -164,7 +168,7 @@ const MedievalCookery: React.FC = () => (
 )
 
 const MedievalEconomy: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Medieval Economy"
     description="Provides a virtual coinpurse and a physical currency item for the purpose of simulating an economy."
     githubLink="https://github.com/Dans-Plugins/Medieval-Economy"
@@ -172,7 +176,7 @@ const MedievalEconomy: React.FC = () => (
 )
 
 const MedievalFactions: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Medieval Factions"
     description="Allows players to organize themselves into feudal, diplomatic, lawful groups akin to nations."
     githubLink="https://github.com/Dans-Plugins/Medieval-Factions"
@@ -180,7 +184,7 @@ const MedievalFactions: React.FC = () => (
 )
 
 const MedievalRoleplayEngine: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Medieval Roleplay Engine"
     description="Facilitates roleplay between players."
     githubLink="https://github.com/Dans-Plugins/Medieval-Roleplay-Engine"
@@ -188,7 +192,7 @@ const MedievalRoleplayEngine: React.FC = () => (
 )
 
 const MiniFactions: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="MiniFactions"
     description="Aims to introduce factions into the game in a simple, easy to use, expandable way."
     githubLink="https://github.com/Dans-Plugins/MiniFactions"
@@ -196,7 +200,7 @@ const MiniFactions: React.FC = () => (
 )
 
 const MoreRecipes: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="More Recipes"
     description="Adds static recipes for items that are not craftable in vanilla."
     githubLink="https://github.com/Dans-Plugins/More-Recipes"
@@ -204,7 +208,7 @@ const MoreRecipes: React.FC = () => (
 )
 
 const NetherAccessController: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Nether Access Controller"
     description="Allows operators to control who has access to the nether."
     githubLink="https://github.com/Dans-Plugins/Nether-Access-Controller"
@@ -212,7 +216,7 @@ const NetherAccessController: React.FC = () => (
 )
 
 const NoMoreCreepers: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="NoMoreCreepers"
     description="Prevents creepers from spawning."
     githubLink="https://github.com/Dans-Plugins/NoMoreCreepers"
@@ -220,7 +224,7 @@ const NoMoreCreepers: React.FC = () => (
 )
 
 const PlayerLore: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="PlayerLore"
     description="Aims to allow players to add lore to their items in Minecraft."
     githubLink="https://github.com/Dans-Plugins/PlayerLore"
@@ -228,7 +232,7 @@ const PlayerLore: React.FC = () => (
 )
 
 const SimpleSkills: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="SimpleSkills"
     description="Introduces skills into the game in a systematic, easy to use, expandable way."
     githubLink="https://github.com/Dans-Plugins/SimpleSkills"
@@ -236,7 +240,7 @@ const SimpleSkills: React.FC = () => (
 )
 
 const WildPets: React.FC = () => (
-  <PluginBox
+  <PluginCard
     title="Wild Pets"
     description="Allows players to tame any entity and keep them as a pet."
     githubLink="https://github.com/Dans-Plugins/Wild-Pets"
@@ -249,12 +253,23 @@ const MostPopularPlugins: React.FC = () => (
     <Typography variant="h3" component="div" gutterBottom>
       Most Popular Plugins
     </Typography>
-
-    <MedievalFactions />
-    <MedievalRoleplayEngine />
-    <FoodSpoilage />
-    <WildPets />
-    <Currencies />
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalFactions />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalRoleplayEngine />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <FoodSpoilage />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <WildPets />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Currencies />
+      </Grid>
+    </Grid>
   </Box>
 )
 
@@ -265,31 +280,83 @@ const AllPlugins: React.FC = () => (
       All Plugins
     </Typography>
 
-    <ActivityTracker />
-    <AlternateAccountFinder />
-    <ConquestRecipes />
-    <Currencies />
-    <DansEssentials />
-    <DansPluginManager />
-    <DansSetHome />
-    <DansSpawnSystem />
-    <Democracy />
-    <EasyLinks />
-    <Fiefs />
-    <FoodSpoilage />
-    <KDRTracker />
-    <Mailboxes />
-    <MedievalCookery />
-    <MedievalEconomy />
-    <MedievalFactions />
-    <MedievalRoleplayEngine />
-    <MiniFactions />
-    <MoreRecipes />
-    <NetherAccessController />
-    <NoMoreCreepers />
-    <PlayerLore />
-    <SimpleSkills />
-    <WildPets />
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}> 
+        <ActivityTracker />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <AlternateAccountFinder />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <ConquestRecipes />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Currencies />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <DansEssentials />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <DansPluginManager />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <DansSetHome />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <DansSpawnSystem />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Democracy />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <EasyLinks />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Fiefs />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <FoodSpoilage />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <KDRTracker />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Mailboxes />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalCookery />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalEconomy />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalFactions />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MedievalRoleplayEngine />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MiniFactions />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <MoreRecipes />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <NetherAccessController />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <NoMoreCreepers />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <PlayerLore />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <SimpleSkills />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <WildPets />
+      </Grid>
+    </Grid>
   </Box>
 )
 

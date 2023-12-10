@@ -1,9 +1,7 @@
 # /bin/bash
-# Run the project
-#
 
 # build
-./build.sh
+npm run build
 
 # run
 npm run start

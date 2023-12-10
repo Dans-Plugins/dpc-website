@@ -1,7 +1,9 @@
 # Dan's Plugins Community Website
-This is a website intended to serve as a home for the Dan's Plugins Community.
+This is a website intended to serve as a hub for the Dan's Plugins Community.
 
-## How to contribute
+The website is currently hosted at [https://dansplugins.com](https://dansplugins.com).
+
+## Contributing
 If you would like to contribute to the website, you can do so by forking the repository and submitting a pull request. If you are not familiar with how to do this, you can follow the steps below:
 1. Fork the repository
 2. Clone the repository to your local machine
@@ -10,21 +12,75 @@ If you would like to contribute to the website, you can do so by forking the rep
 5. Push your changes to your fork
 6. Submit a pull request
 
-## How to compile the project
+## How to compile & run the project
+### Compile Manually
 To compile the project, you will need to have [Node.js](https://nodejs.org/en/) installed. Once you have Node.js installed, you can run the following commands in the project directory:
 
 ```bash
 npm install
 npm run build
 ```
-## How to run the project
+
+### Run Manually
 Once the project is compiled, you can run the project by running the following command in the project directory:
 
 ```bash
 npm run start
 ```
 
-## Learning Next.js
+### `build_and_run.sh` Script
+Alternatively, you could execute the `build_and_run.sh` script in the project directory:
+
+```bash
+./build_and_run.sh
+```
+
+This script will compile the project and then run it.
+
+### Docker
+#### Start
+The website can be run in a Docker container. To do this, you can run the following commands in the project directory:
+
+```bash
+docker build -t dpc-website .
+docker run -p 3000:3000 dpc-website
+```
+
+#### Stop
+To stop the Docker container, you can run the following command in the project directory:
+
+```bash
+docker stop dpc-website
+```
+
+### Docker Compose
+#### Start
+The website can also be run in a Docker container using Docker Compose. To do this, you can run the following command in the project directory:
+
+```bash
+docker-compose up
+```
+
+Alternatively, you could execute the `up.sh` script in the project directory:
+
+```bash
+./up.sh
+```
+
+#### Stop
+To stop the Docker container, you can run the following command in the project directory:
+
+```bash
+docker-compose down
+```
+
+Alternatively, you could execute the `down.sh` script in the project directory:
+
+```bash
+./down.sh
+```
+
+## Next.js
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 To learn more about Next.js, take a look at the following resources:

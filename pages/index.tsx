@@ -4,6 +4,10 @@ import TopBar from '../components/TopBar'
 import Blurb from '../components/Blurb'
 import PluginCard from '../components/PluginCard'
 import React from 'react';
+import BottomBar from '../components/BottomBar'
+
+// pull version from package.json
+const version = require('../package.json').version
 
 // declare react component for each plugin A-Z
 const ActivityTracker: React.FC = () => (
@@ -335,6 +339,7 @@ const Home: NextPage = () => (
         <br />
         <AllPlugins />
       </Container>
+      <BottomBar version={version}/>
     </Box>
 )
 

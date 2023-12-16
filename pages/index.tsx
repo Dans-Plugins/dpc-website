@@ -1,8 +1,9 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 import type { NextPage } from 'next'
-import TopBar from '../components/topBar'
-import Blurb from '../components/blurb'
-import PluginCard from '../components/pluginCard'
+import TopBar from '../components/TopBar'
+import Blurb from '../components/Blurb'
+import PluginCard from '../components/PluginCard'
+import React from 'react';
 
 // declare react component for each plugin A-Z
 const ActivityTracker: React.FC = () => (
@@ -207,7 +208,10 @@ const WildPets: React.FC = () => (
 
 // declare react component for Most Popular Plugins section
 const MostPopularPlugins: React.FC = () => (
-  <Box sx={{ flexGrow: 1 }}>
+  <Box sx={{
+    flexGrow: 1,
+    marginBottom: 2
+  }}>
     <Typography variant="h3" component="div" gutterBottom>
       Most Popular Plugins
     </Typography>
@@ -233,7 +237,10 @@ const MostPopularPlugins: React.FC = () => (
 
 // declare react component for All Plugins section
 const AllPlugins: React.FC = () => (
-  <Box sx={{ flexGrow: 1 }}>
+  <Box sx={{
+    flexGrow: 1,
+    marginBottom: 2
+  }}>
     <Typography variant="h3" component="div" gutterBottom>
       All Plugins
     </Typography>
@@ -319,15 +326,16 @@ const AllPlugins: React.FC = () => (
 )
 
 const Home: NextPage = () => (
-  <Box sx={{ flexGrow: 1 }}>
-    
-    <TopBar />
-    <Blurb />
-    <br />
-    <MostPopularPlugins />
-    <br />
-    <AllPlugins />
-  </Box>
+    <Box sx={{ flexGrow: 1 }}>
+      <TopBar />
+      <Container maxWidth="xl">
+        <Blurb />
+        <br />
+        <MostPopularPlugins />
+        <br />
+        <AllPlugins />
+      </Container>
+    </Box>
 )
 
 export default Home

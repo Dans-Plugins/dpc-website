@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import React from 'react';
 
 const Blurb: React.FC = () => (
     <Box sx={{ flexGrow: 1, p: 2 }}>

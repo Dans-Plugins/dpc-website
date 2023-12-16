@@ -3,8 +3,10 @@ import React, { useContext } from 'react';
 import { ColorModeToggleSwitch } from './ColorModeToggleSwitch';
 import { ColorModeContext } from '../utils/ColorModeContext';
 
-// declare react component for top bar
-const TopBar: React.FC = () => {
+interface BottomBarProps {
+  version: string
+}
+const BottomBar: React.FC<BottomBarProps> = ({ version }) => {
   const colorMode = useContext(ColorModeContext);
   const theme = useTheme();
   return (
@@ -18,11 +20,10 @@ const TopBar: React.FC = () => {
             display="inline"
             mr={2}
           >
-            Dan&apos;s Plugins Community
+            v{version}
           </Typography>
-          <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
-          <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
-          <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>
+          <Button color="inherit" href="https://github.com/Dans-Plugins/dpc-website">Source Code</Button>
+          <Button color="inherit" href="https://github.com/Dans-Plugins/dpc-website/issues/new/choose">Report a Bug</Button>
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <ColorModeToggleSwitch
@@ -35,4 +36,4 @@ const TopBar: React.FC = () => {
   );
 }
 
-export default TopBar
+export default BottomBar

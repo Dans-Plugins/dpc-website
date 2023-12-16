@@ -5,9 +5,10 @@ interface PluginCardProps {
     title: string
     description: string
     githubLink: string
+    spigotmcLink?: string
 }
 
-const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink }) => (
+const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink, spigotmcLink }) => (
   <Card
     sx={{
       height: '15rem',
@@ -33,6 +34,9 @@ const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink 
       }}
     >
       <Button variant="contained" size="small" component={Link} href={githubLink}>GitHub</Button>
+      {
+        spigotmcLink ? <Button variant="contained" size="small" component={Link} href={spigotmcLink}>SpigotMC</Button> : null
+      }
     </CardActions>
   </Card>
 )

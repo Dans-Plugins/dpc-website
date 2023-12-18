@@ -62,7 +62,7 @@ const PluginCard: React.FC<PluginCardProps> = ({ title, description, githubLink,
   return (
     <Card
       sx={{
-        height: '15rem',
+        height: '18rem',
         display: 'flex',
         flexDirection: 'column',
       }}

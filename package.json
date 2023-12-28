@@ -1,6 +1,6 @@
 {
   "name": "dpc-website",
-  "version": "0.2.0-SNAPSHOT",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

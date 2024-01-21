@@ -5,7 +5,7 @@ import { createTheme, CssBaseline, ThemeProvider, useMediaQuery } from '@mui/mat
 import { ColorModeContext } from '../utils/ColorModeContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = true;
 
   const [mode, setMode] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
 

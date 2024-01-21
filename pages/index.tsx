@@ -190,16 +190,6 @@ const MedievalRoleplayEngine: React.FC = () => (
   />
 )
 
-const MiniFactions: React.FC = () => (
-  <PluginCard
-    title="MiniFactions"
-    description="Aims to introduce factions into the game in a simple, easy to use, expandable way."
-    githubLink="https://github.com/Dans-Plugins/MiniFactions"
-    // no spigotmc link yet
-    // no bStats ID yet
-  />
-)
-
 const MoreRecipes: React.FC = () => (
   <PluginCard
     title="More Recipes"
@@ -353,9 +343,6 @@ const AllPlugins: React.FC = () => (
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <MedievalRoleplayEngine />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MiniFactions />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <MoreRecipes />

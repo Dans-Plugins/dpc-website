@@ -190,16 +190,6 @@ const MedievalRoleplayEngine: React.FC = () => (
   />
 )
 
-const MiniFactions: React.FC = () => (
-  <PluginCard
-    title="MiniFactions"
-    description="Aims to introduce factions into the game in a simple, easy to use, expandable way."
-    githubLink="https://github.com/Dans-Plugins/MiniFactions"
-    // no spigotmc link yet
-    // no bStats ID yet
-  />
-)
-
 const MoreRecipes: React.FC = () => (
   <PluginCard
     title="More Recipes"

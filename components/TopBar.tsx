@@ -20,6 +20,8 @@ const TopBar: React.FC = () => {
           >
             Dan&apos;s Plugins Community
           </Typography>
+          <Button color="inherit" href="/">Home</Button>
+          <Button color="inherit" href="/guides">Guides</Button>
           <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
           <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
           <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>

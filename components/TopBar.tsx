@@ -3,6 +3,16 @@ import React, { useContext } from 'react';
 import { ColorModeToggleSwitch } from './ColorModeToggleSwitch';
 import { ColorModeContext } from '../utils/ColorModeContext';
 
+// declare each button
+const HomeButton = () => <Button color="inherit" href="/">Home</Button>
+const GuidesButton = () => <Button color="inherit" href="/guides">Guides</Button>
+const GitHubButton = () => <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
+const DiscordButton = () => <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
+const PlaytestServerButton = () => <Button color="inherit" href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">Playtest Server</Button>
+const PatreonButton = () => <Button color="inherit" href="https://www.patreon.com/danthetechman">Patreon</Button>
+const LinkedInButton = () => <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>
+const RPKitButton = () => <Button color="inherit" href="https://github.com/RP-Kit/RPKit">RPKit</Button>
+
 // declare react component for top bar
 const TopBar: React.FC = () => {
   const colorMode = useContext(ColorModeContext);
@@ -20,13 +30,15 @@ const TopBar: React.FC = () => {
           >
             Dan&apos;s Plugins Community
           </Typography>
-          <Button color="inherit" href="/">Home</Button>
-          <Button color="inherit" href="/guides">Guides</Button>
-          <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
-          <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
-          <Button color="inherit" href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">Playtest Server</Button>
-          <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>
-          <Button color="inherit" href="https://github.com/RP-Kit/RPKit">RPKit</Button>
+          
+          <HomeButton />
+          <GuidesButton />
+          <GitHubButton />
+          <DiscordButton />
+          <PlaytestServerButton />
+          <PatreonButton />
+          <LinkedInButton />
+          <RPKitButton />
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <ColorModeToggleSwitch

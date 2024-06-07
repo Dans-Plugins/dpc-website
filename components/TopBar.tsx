@@ -22,10 +22,11 @@ const TopBar: React.FC = () => {
           </Typography>
           <Button color="inherit" href="/">Home</Button>
           <Button color="inherit" href="/guides">Guides</Button>
-          <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub*</Button>
-          <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord*</Button>
-          <Button color="inherit" href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">Playtest Server*</Button>
-          <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn*</Button>
+          <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
+          <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
+          <Button color="inherit" href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">Playtest Server</Button>
+          <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>
+          <Button color="inherit" href="https://github.com/RP-Kit/RPKit">RPKit</Button>
         </Box>
         <Box sx={{ flexGrow: 0 }}>
           <ColorModeToggleSwitch

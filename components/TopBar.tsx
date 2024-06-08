@@ -9,7 +9,7 @@ const GuidesButton = () => <Button color="inherit" href="/guides">Guides</Button
 const GitHubButton = () => <Button color="inherit" href="https://github.com/Dans-Plugins">GitHub</Button>
 const DiscordButton = () => <Button color="inherit" href="https://discord.gg/xXtuAQ2">Discord</Button>
 const PlaytestServerButton = () => <Button color="inherit" href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">Playtest Server</Button>
-const PatreonButton = () => <Button color="inherit" href="https://www.patreon.com/danthetechman">Patreon</Button>
+const PatreonButton = () => <Button color="inherit" href="https://www.patreon.com/danspluginscommunity">Patreon</Button>
 const LinkedInButton = () => <Button color="inherit" href="https://www.linkedin.com/company/dansplugins">LinkedIn</Button>
 const RPKitButton = () => <Button color="inherit" href="https://github.com/RP-Kit/RPKit">RPKit</Button>
 

@@ -1,10 +1,45 @@
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography, Theme } from '@mui/material'
 import type { NextPage } from 'next'
 import TopBar from '../components/TopBar'
 import Blurb from '../components/Blurb'
 import PluginCard from '../components/PluginCard'
 import React from 'react';
 import BottomBar from '../components/BottomBar'
+
+const sectionHeaderStyle = {
+  fontWeight: 'bold',
+  color: 'primary.main',
+  borderBottom: '2px solid',
+  borderColor: 'primary.main',
+  paddingBottom: 1,
+  marginBottom: 3
+}
+
+const gridContainerStyle = {
+  spacing: { xs: 2, md: 3 },
+  pb: 4
+}
+
+const cardWrapperStyle = {
+  transition: 'transform 0.2s ease-in-out',
+  '&:hover': {
+    transform: 'translateY(-4px)'
+  }
+}
+
+const SectionDivider: React.FC = () => (
+    <Box
+        sx={{
+          height: '2px',
+          background: (theme: Theme) => `linear-gradient(to right, 
+        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}, 
+        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}, 
+        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}
+      )`,
+          my: 4
+        }}
+    />
+)
 
 // pull version from package.json
 const version = require('../package.json').version
@@ -30,16 +65,6 @@ const AlternateAccountFinder: React.FC = () => (
   />
 )
 
-const ConquestRecipes: React.FC = () => (
-  <PluginCard
-    title="Conquest Recipes"
-    description="Adds recipes for the many item textures that the Conquest Resource Pack adds to the game."
-    githubLink="https://github.com/Dans-Plugins/Conquest-Recipes"
-    spigotmcLink="https://www.spigotmc.org/resources/conquest-recipes.83594/"
-    // no bStats ID yet
-  />
-)
-
 const Currencies: React.FC = () => (
   <PluginCard
     title="Currencies"
@@ -57,16 +82,6 @@ const DansEssentials: React.FC = () => (
     githubLink="https://github.com/Dans-Plugins/Dans-Essentials"
     spigotmcLink="https://www.spigotmc.org/resources/dans-essentials.80513/"
     bStatsId="9527"
-  />
-)
-
-const DansPluginManager: React.FC = () => (
-  <PluginCard
-    title="Dan's Plugin Manager"
-    description="Allows operators to easily download the community's plugins in-game or through a server console."
-    githubLink="https://github.com/Dans-Plugins/Dans-Plugin-Manager"
-    spigotmcLink="https://www.spigotmc.org/resources/dans-plugin-manager-early-access.100279/"
-    // no bStats ID yet
   />
 )
 
@@ -96,16 +111,6 @@ const Democracy: React.FC = () => (
     description="An expansion for MF that aims to allow nations to be democratic."
     githubLink="https://github.com/Dans-Plugins/Democracy"
     // no spigotmc link yet
-    // no bStats ID yet
-  />
-)
-
-const EasyLinks: React.FC = () => (
-  <PluginCard
-    title="Easy Links"
-    description="Allows players to view relevant links with simple commands."
-    githubLink="https://github.com/Dans-Plugins/Easy-Links"
-    spigotmcLink="https://www.spigotmc.org/resources/easylinks-early-access.98040/"
     // no bStats ID yet
   />
 )
@@ -252,132 +257,129 @@ const WildPets: React.FC = () => (
 
 // declare react component for Most Popular Plugins section
 const MostPopularPlugins: React.FC = () => (
-  <Box sx={{
-    flexGrow: 1,
-    marginBottom: 2
-  }}>
-    <Typography variant="h3" component="div" gutterBottom>
-      Most Popular Plugins
-    </Typography>
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalFactions />
+    <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
+      <Typography variant="h3" component="div" gutterBottom sx={sectionHeaderStyle}>
+        Most Popular Plugins
+      </Typography>
+      <Grid container {...gridContainerStyle}>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalFactions />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalRoleplayEngine />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <FoodSpoilage />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <WildPets />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <Currencies />
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalRoleplayEngine />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <FoodSpoilage />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <WildPets />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <Currencies />
-      </Grid>
-    </Grid>
-  </Box>
+    </Box>
 )
 
 // declare react component for All Plugins section
 const AllPlugins: React.FC = () => (
-  <Box sx={{
-    flexGrow: 1,
-    marginBottom: 2
-  }}>
-    <Typography variant="h3" component="div" gutterBottom>
-      All Plugins
-    </Typography>
-
-    <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}> 
-        <ActivityTracker />
+    <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
+      <Typography variant="h3" component="div" gutterBottom sx={sectionHeaderStyle}>
+        All Plugins
+      </Typography>
+      <Grid container {...gridContainerStyle}>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <ActivityTracker />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <AlternateAccountFinder />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <Currencies />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <DansEssentials />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <DansSetHome />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <DansSpawnSystem />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <Democracy />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <Fiefs />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <FoodSpoilage />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <KDRTracker />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <Mailboxes />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalCookery />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalEconomy />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalFactions />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MedievalRoleplayEngine />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <MoreRecipes />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <NetherAccessController />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <NoMoreCreepers />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <PlayerLore />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <SimpleSkills />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+          <WildPets />
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <AlternateAccountFinder />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <ConquestRecipes />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <Currencies />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <DansEssentials />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <DansPluginManager />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <DansSetHome />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <DansSpawnSystem />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <Democracy />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <EasyLinks />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <Fiefs />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <FoodSpoilage />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <KDRTracker />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <Mailboxes />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalCookery />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalEconomy />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalFactions />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MedievalRoleplayEngine />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <MoreRecipes />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <NetherAccessController />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <NoMoreCreepers />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <PlayerLore />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <SimpleSkills />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <WildPets />
-      </Grid>
-    </Grid>
-  </Box>
+    </Box>
 )
 
-const Home: NextPage = () => (
-  <Box sx={{ flexGrow: 1 }}>
-    <TopBar />
-    <Container maxWidth="xl">
-      <Blurb />
-      <br />
-      <MostPopularPlugins />
-      <br />
-      <AllPlugins />
-    </Container>
-    <BottomBar version={version}/>
-  </Box>
-)
+const Home: NextPage = () => {
+  const pageStyle = {
+    backgroundColor: (theme: Theme) =>
+        theme.palette.mode === 'dark' ? 'background.default' : '#f5f5f5',
+    backgroundImage: (theme: Theme) =>
+        theme.palette.mode === 'dark'
+            ? 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
+            : 'linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px)',
+    backgroundSize: '20px 20px',
+    minHeight: '100vh'
+  }
+
+  return (
+      <Box sx={{ flexGrow: 1, ...pageStyle }}>
+        <TopBar />
+        <Container maxWidth="xl" sx={{ py: 4 }}>
+          <Blurb />
+          <SectionDivider />
+          <MostPopularPlugins />
+          <SectionDivider />
+          <AllPlugins />
+        </Container>
+        <BottomBar version={version}/>
+      </Box>
+  )
+}
 
 export default Home

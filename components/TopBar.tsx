@@ -70,7 +70,7 @@ const TopBar: React.FC = () => {
               <NavButton href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">
                 Playtest Server
               </NavButton>
-              <NavButton href="https://www.patreon.com/danthetechman">Patreon</NavButton>
+              <NavButton href="https://www.patreon.com/danspluginscommunity">Patreon</NavButton>
               <NavButton href="https://www.linkedin.com/company/dansplugins">LinkedIn</NavButton>
               <NavButton href="https://github.com/RP-Kit/RPKit">RPKit</NavButton>
             </Box>

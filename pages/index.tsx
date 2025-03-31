@@ -30,16 +30,6 @@ const AlternateAccountFinder: React.FC = () => (
   />
 )
 
-const ConquestRecipes: React.FC = () => (
-  <PluginCard
-    title="Conquest Recipes"
-    description="Adds recipes for the many item textures that the Conquest Resource Pack adds to the game."
-    githubLink="https://github.com/Dans-Plugins/Conquest-Recipes"
-    spigotmcLink="https://www.spigotmc.org/resources/conquest-recipes.83594/"
-    // no bStats ID yet
-  />
-)
-
 const Currencies: React.FC = () => (
   <PluginCard
     title="Currencies"
@@ -57,16 +47,6 @@ const DansEssentials: React.FC = () => (
     githubLink="https://github.com/Dans-Plugins/Dans-Essentials"
     spigotmcLink="https://www.spigotmc.org/resources/dans-essentials.80513/"
     bStatsId="9527"
-  />
-)
-
-const DansPluginManager: React.FC = () => (
-  <PluginCard
-    title="Dan's Plugin Manager"
-    description="Allows operators to easily download the community's plugins in-game or through a server console."
-    githubLink="https://github.com/Dans-Plugins/Dans-Plugin-Manager"
-    spigotmcLink="https://www.spigotmc.org/resources/dans-plugin-manager-early-access.100279/"
-    // no bStats ID yet
   />
 )
 
@@ -96,16 +76,6 @@ const Democracy: React.FC = () => (
     description="An expansion for MF that aims to allow nations to be democratic."
     githubLink="https://github.com/Dans-Plugins/Democracy"
     // no spigotmc link yet
-    // no bStats ID yet
-  />
-)
-
-const EasyLinks: React.FC = () => (
-  <PluginCard
-    title="Easy Links"
-    description="Allows players to view relevant links with simple commands."
-    githubLink="https://github.com/Dans-Plugins/Easy-Links"
-    spigotmcLink="https://www.spigotmc.org/resources/easylinks-early-access.98040/"
     // no bStats ID yet
   />
 )
@@ -297,16 +267,10 @@ const AllPlugins: React.FC = () => (
         <AlternateAccountFinder />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <ConquestRecipes />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <Currencies />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <DansEssentials />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <DansPluginManager />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <DansSetHome />
@@ -316,9 +280,6 @@ const AllPlugins: React.FC = () => (
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <Democracy />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
-        <EasyLinks />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <Fiefs />

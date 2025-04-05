@@ -6,40 +6,12 @@ import PluginCard from '../components/PluginCard'
 import React from 'react';
 import BottomBar from '../components/BottomBar'
 
-const sectionHeaderStyle = {
-  fontWeight: 'bold',
-  color: 'primary.main',
-  borderBottom: '2px solid',
-  borderColor: 'primary.main',
-  paddingBottom: 1,
-  marginBottom: 3
-}
-
-const gridContainerStyle = {
-  spacing: { xs: 2, md: 3 },
-  pb: 4
-}
-
-const cardWrapperStyle = {
-  transition: 'transform 0.2s ease-in-out',
-  '&:hover': {
-    transform: 'translateY(-4px)'
-  }
-}
+// Import styles
+import { sectionHeaderStyle, gridContainerStyle, cardWrapperStyle, sectionDividerStyle, pageStyle, pluginsBoxStyle } from '../styles/styles';
 
 const SectionDivider: React.FC = () => (
-    <Box
-        sx={{
-          height: '2px',
-          background: (theme: Theme) => `linear-gradient(to right, 
-        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}, 
-        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}, 
-        ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}
-      )`,
-          my: 4
-        }}
-    />
-)
+    <Box sx={(theme) => sectionDividerStyle(theme)} />
+);
 
 // pull version from package.json
 const version = require('../package.json').version
@@ -257,7 +229,7 @@ const WildPets: React.FC = () => (
 
 // declare react component for Most Popular Plugins section
 const MostPopularPlugins: React.FC = () => (
-    <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
+    <Box sx={pluginsBoxStyle}>
       <Typography variant="h3" component="div" gutterBottom sx={sectionHeaderStyle}>
         Most Popular Plugins
       </Typography>
@@ -283,7 +255,7 @@ const MostPopularPlugins: React.FC = () => (
 
 // declare react component for All Plugins section
 const AllPlugins: React.FC = () => (
-    <Box sx={{ flexGrow: 1, marginBottom: 2 }}>
+    <Box sx={pluginsBoxStyle}>
       <Typography variant="h3" component="div" gutterBottom sx={sectionHeaderStyle}>
         All Plugins
       </Typography>
@@ -356,19 +328,8 @@ const AllPlugins: React.FC = () => (
 )
 
 const Home: NextPage = () => {
-  const pageStyle = {
-    backgroundColor: (theme: Theme) =>
-        theme.palette.mode === 'dark' ? 'background.default' : '#f5f5f5',
-    backgroundImage: (theme: Theme) =>
-        theme.palette.mode === 'dark'
-            ? 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
-            : 'linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px)',
-    backgroundSize: '20px 20px',
-    minHeight: '100vh'
-  }
-
   return (
-      <Box sx={{ flexGrow: 1, ...pageStyle }}>
+      <Box sx={pageStyle}>
         <TopBar />
         <Container maxWidth="xl" sx={{ py: 4 }}>
           <Blurb />
@@ -377,9 +338,9 @@ const Home: NextPage = () => {
           <SectionDivider />
           <AllPlugins />
         </Container>
-        <BottomBar version={version}/>
+        <BottomBar version={version} />
       </Box>
-  )
-}
+  );
+};
 
 export default Home

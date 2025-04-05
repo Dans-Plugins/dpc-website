@@ -89,8 +89,11 @@ export const brandNameStyle = (theme: Theme) => ({
     },
 });
 
-export const toolbarStyle = (theme: Theme) => ({
-    paddingY: theme.spacing(1),
+export const toolbarStyle = (theme: Theme, options?: { justifyContent?: string; flexWrap?: string }) => ({
+    paddingY: theme.spacing(0.5),
+    display: 'flex',
+    justifyContent: options?.justifyContent || 'space-between',
+    flexWrap: options?.flexWrap || 'wrap',
 });
 
 export const toggleSwitchBoxStyle = {
@@ -100,3 +103,50 @@ export const toggleSwitchBoxStyle = {
         transform: 'scale(1.1)',
     },
 };
+
+export const bottomAppBarStyle = (theme: Theme) => ({
+    ...appBarStyle(theme), // Reference basic appBar styling
+    top: 'auto',
+    bottom: 0,
+    borderTop: `1px solid ${
+        theme.palette.mode === 'dark'
+            ? 'rgba(255, 255, 255, 0.12)'
+            : 'rgba(0, 0, 0, 0.12)'
+    }`,
+});
+
+export const footerButtonStyle = (theme: Theme) => ({
+    ...navButtonStyle(theme),
+    marginX: theme.spacing(1),
+});
+
+export const versionNumberStyle = (theme: Theme) => ({
+    display: 'inline-flex',
+    alignItems: 'center',
+    paddingX: theme.spacing(2),
+    paddingY: theme.spacing(0.5),
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: theme.palette.mode === 'dark'
+        ? 'rgba(255, 255, 255, 0.1)'
+        : 'rgba(0, 0, 0, 0.05)',
+    fontFamily: 'monospace',
+    fontWeight: theme.typography.fontWeightMedium,
+    transition: 'all 0.3s ease',
+    '&:hover': {
+        backgroundColor: theme.palette.mode === 'dark'
+            ? 'rgba(255, 255, 255, 0.15)'
+            : 'rgba(0, 0, 0, 0.08)',
+        transform: 'scale(1.05)',
+    },
+});
+
+export const flexContainerStyle = (theme: Theme, options?: {
+    gap?: number;
+    alignItems?: string;
+    flexWrap?: string
+}) => ({
+    display: 'flex',
+    alignItems: options?.alignItems || 'center',
+    gap: theme.spacing(options?.gap || 2),
+    flexWrap: options?.flexWrap || 'wrap',
+});

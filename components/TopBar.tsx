@@ -4,7 +4,14 @@ import {ColorModeToggleSwitch} from './ColorModeToggleSwitch';
 import {ColorModeContext} from '../utils/ColorModeContext';
 
 // Import styles
-import {appBarStyle, navButtonStyle, brandNameStyle, toolbarStyle, toggleSwitchBoxStyle} from '../styles/styles';
+import {
+    appBarStyle,
+    navButtonStyle,
+    brandNameStyle,
+    toolbarStyle,
+    toggleSwitchBoxStyle,
+    flexContainerStyle
+} from '../styles/styles';
 
 // Enhanced button component with hover effects
 const NavButton: React.FC<{ href: string; children: React.ReactNode }> = ({href, children}) => (
@@ -39,10 +46,10 @@ const TopBar: React.FC = () => {
             sx={(theme) => appBarStyle(theme)}
         >
             <Toolbar sx={(theme) => toolbarStyle(theme)}>
-                <Box sx={{flexGrow: 1, display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
+                <Box sx={(theme) => flexContainerStyle(theme, {flexWrap: 'wrap'})}>
                     <BrandName/>
 
-                    <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 1}}>
+                    <Box sx={(theme) => flexContainerStyle(theme, {gap: 1})}>
                         <NavButton href="/">Home</NavButton>
                         <NavButton href="/guides">Guides</NavButton>
                         <NavButton href="https://github.com/Dans-Plugins">GitHub</NavButton>

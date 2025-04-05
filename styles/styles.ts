@@ -52,3 +52,7 @@ export const gridItemStyle = {
     xl: 2,
     sx: cardWrapperStyle,
 };
+
+export const containerPaddingStyle = (theme: Theme) => ({
+    paddingY: theme.spacing(4),
+});

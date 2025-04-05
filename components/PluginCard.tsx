@@ -10,9 +10,9 @@ interface PluginCardProps {
 }
 
 async function getServerCount(bStatsId: string) {
-    var functionName = 'getServerCount()'
-    var response = await fetch('https://bstats.org/api/v1/plugins/' + bStatsId + '/charts/servers/data?maxElements=1')
-    var data = await response.json()
+    const functionName = 'getServerCount()';
+    const response = await fetch('https://bstats.org/api/v1/plugins/' + bStatsId + '/charts/servers/data?maxElements=1');
+    const data = await response.json();
     // verify we have a list
     if (!Array.isArray(data)) {
         console.log(functionName + ' returned data that is not an array')
@@ -24,7 +24,7 @@ async function getServerCount(bStatsId: string) {
         console.log(functionName + ' returned data that has less than one element')
         return
     }
-    var firstElement = data[0]
+    const firstElement = data[0];
     // verify that the first element is an array
     if (!Array.isArray(firstElement)) {
         console.log(functionName + ' returned data that has a first element that is not an array')
@@ -35,14 +35,13 @@ async function getServerCount(bStatsId: string) {
         console.log(functionName + ' returned data that has a first element that has less than 2 elements')
         return
     }
-    var secondElementOfFirstElement = firstElement[1]
+    const secondElementOfFirstElement = firstElement[1];
     // verify that the second element of the first element is a number
     if (typeof secondElementOfFirstElement !== 'number') {
         console.log(functionName + ' returned data that has a first element that has a second element that is not a number')
         return
     }
-    var serverCount = secondElementOfFirstElement
-    return serverCount
+    return secondElementOfFirstElement
 }
 
 const PluginCard: React.FC<PluginCardProps> = ({title, description, githubLink, spigotmcLink, bStatsId}) => {
@@ -53,7 +52,7 @@ const PluginCard: React.FC<PluginCardProps> = ({title, description, githubLink, 
             return
         }
         const fetchServerCount = async () => {
-            var serverCount = await getServerCount(bStatsId)
+            const serverCount = await getServerCount(bStatsId);
             setServerCount(serverCount)
         };
 

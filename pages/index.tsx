@@ -7,7 +7,7 @@ import React from 'react';
 import BottomBar from '../components/BottomBar'
 
 // Import styles
-import { sectionHeaderStyle, gridContainerStyle, cardWrapperStyle, sectionDividerStyle, pageStyle, pluginsBoxStyle } from '../styles/styles';
+import { sectionHeaderStyle, gridContainerStyle, sectionDividerStyle, pageStyle, pluginsBoxStyle, gridItemStyle } from '../styles/styles';
 
 const SectionDivider: React.FC = () => (
     <Box sx={(theme) => sectionDividerStyle(theme)} />
@@ -234,19 +234,19 @@ const MostPopularPlugins: React.FC = () => (
         Most Popular Plugins
       </Typography>
       <Grid container {...gridContainerStyle}>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalFactions />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalRoleplayEngine />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <FoodSpoilage />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <WildPets />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <Currencies />
         </Grid>
       </Grid>
@@ -260,67 +260,67 @@ const AllPlugins: React.FC = () => (
         All Plugins
       </Typography>
       <Grid container {...gridContainerStyle}>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <ActivityTracker />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <AlternateAccountFinder />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <Currencies />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <DansEssentials />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <DansSetHome />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <DansSpawnSystem />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <Democracy />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <Fiefs />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <FoodSpoilage />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <KDRTracker />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <Mailboxes />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalCookery />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalEconomy />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalFactions />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MedievalRoleplayEngine />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <MoreRecipes />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <NetherAccessController />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <NoMoreCreepers />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <PlayerLore />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <SimpleSkills />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2} sx={cardWrapperStyle}>
+        <Grid item {...gridItemStyle}>
           <WildPets />
         </Grid>
       </Grid>

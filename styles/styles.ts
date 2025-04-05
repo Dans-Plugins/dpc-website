@@ -43,3 +43,12 @@ export const pluginsBoxStyle = {
     flexGrow: 1,
     marginBottom: 2,
 };
+
+export const gridItemStyle = {
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3,
+    xl: 2,
+    sx: cardWrapperStyle,
+};

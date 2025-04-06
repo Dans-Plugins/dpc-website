@@ -150,3 +150,47 @@ export const flexContainerStyle = (theme: Theme, options?: {
     gap: theme.spacing(options?.gap || 2),
     flexWrap: options?.flexWrap || 'wrap',
 });
+
+export const blurbBoxStyle = (theme: Theme) => ({
+    flexGrow: 1,
+    paddingY: theme.spacing(4),
+});
+
+export const blurbTitleStyle = (theme: Theme) => ({
+    fontWeight: 'bold',
+    marginBottom: theme.spacing(4),
+    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+    WebkitBackgroundClip: 'text',
+    textFillColor: 'transparent',
+    textAlign: 'center',
+});
+
+export const blurbGridContainerStyle = (theme: Theme) => ({
+    marginTop: theme.spacing(2),
+});
+
+export const infoCardStyle = (theme: Theme) => ({
+    padding: theme.spacing(3),
+    height: '100%',
+    transition: 'transform 0.2s ease-in-out',
+    '&:hover': {
+        transform: 'translateY(-4px)',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+});
+
+export const infoCardIconStyle = (theme: Theme) => ({
+    marginBottom: theme.spacing(2),
+    color: theme.palette.primary.main,
+});
+
+export const infoCardTitleStyle = (theme: Theme) => ({
+    fontWeight: 'bold',
+});
+
+export const infoCardIconSizeStyle = {
+    fontSize: 40,
+};

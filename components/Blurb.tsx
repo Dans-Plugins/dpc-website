@@ -20,7 +20,7 @@ const InfoCard: React.FC<{ icon: React.ReactNode; title: string; content: string
             <Box sx={(theme) => infoCardIconStyle(theme)}>
                 {icon}
             </Box>
-            <Typography variant="h6" gutterBottom sx={(theme) => infoCardTitleStyle(theme)}>
+            <Typography variant="h6" gutterBottom sx={(theme) => infoCardTitleStyle()}>
                 {title}
             </Typography>
             <Typography variant="body1">{content}</Typography>

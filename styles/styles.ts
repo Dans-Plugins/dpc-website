@@ -1,10 +1,23 @@
 import {Theme} from '@mui/material/styles';
 
+// Common theme-based patterns
+const getCommonGradient = (theme: Theme) => ({
+    light: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)',
+    medium: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
+});
+
+const commonTransition = {
+    transition: 'all 0.3s ease',
+};
+
+const commonHoverBg = (theme: Theme) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
+});
+
 export const sectionHeaderStyle = (theme: Theme) => ({
     fontWeight: 'bold',
     color: theme.palette.primary.main,
-    borderBottom: '2px solid',
-    borderColor: theme.palette.primary.main,
+    borderBottom: `2px solid ${theme.palette.primary.main}`,
     paddingBottom: theme.spacing(1),
     marginBottom: theme.spacing(3),
 });
@@ -12,44 +25,32 @@ export const sectionHeaderStyle = (theme: Theme) => ({
 export const gridContainerStyle = {spacing: {xs: 2, md: 3}, pb: 4};
 
 export const cardWrapperStyle = {
-    transition: 'transform 0.2s ease-in-out',
-    '&:hover': {
-        transform: 'translateY(-4px)',
-    },
+    ...commonTransition,
+    '&:hover': {transform: 'translateY(-4px)'},
 };
 
-export const sectionDividerStyle = (theme: Theme) => ({
-    height: '2px',
-    background: `linear-gradient(to right, 
-      ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}, 
-      ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}, 
-      ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0)' : 'rgba(0,0,0,0)'}
-    )`,
-    marginY: theme.spacing(4), // Use theme spacing for consistency
-});
+export const sectionDividerStyle = (theme: Theme) => {
+    const gradient = getCommonGradient(theme);
+    return {
+        height: '2px',
+        background: `linear-gradient(to right, ${gradient.light}, ${gradient.medium}, ${gradient.light})`,
+        marginY: theme.spacing(4),
+    };
+};
 
 export const pageStyle = (theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.background.default : '#f5f5f5',
-    backgroundImage:
-        theme.palette.mode === 'dark'
-            ? 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)'
-            : 'linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px)',
+    backgroundImage: `linear-gradient(${theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.8)'} 1px, transparent 1px), 
+                   linear-gradient(90deg, ${theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.8)'} 1px, transparent 1px)`,
     backgroundSize: '20px 20px',
     minHeight: '100vh',
 });
 
-export const pluginsBoxStyle = {
-    flexGrow: 1,
-    marginBottom: 2,
-};
+export const pluginsBoxStyle = {flexGrow: 1, marginBottom: 2};
 
 export const gridItemStyle = {
-    xs: 12,
-    sm: 6,
-    md: 4,
-    lg: 3,
-    xl: 2,
+    xs: 12, sm: 6, md: 4, lg: 3, xl: 2,
     sx: cardWrapperStyle,
 };
 
@@ -58,21 +59,17 @@ export const containerPaddingStyle = (theme: Theme) => ({
 });
 
 export const appBarStyle = (theme: Theme) => ({
-    background: theme.palette.mode === 'dark'
-        ? 'linear-gradient(45deg, #1a237e 30%, #283593 90%)'
-        : 'linear-gradient(45deg, #1976d2 30%, #2196f3 90%)',
-    elevation: 4, // Optional: You can remove elevation from the component itself
+    background: `linear-gradient(45deg, ${theme.palette.mode === 'dark' ? '#1a237e 30%, #283593' : '#1976d2 30%, #2196f3'} 90%)`,
+    elevation: 4,
 });
 
 export const navButtonStyle = (theme: Theme) => ({
     color: 'inherit',
     marginX: theme.spacing(0.5),
-    transition: 'all 0.3s ease',
+    ...commonTransition,
     '&:hover': {
         transform: 'translateY(-2px)',
-        backgroundColor: theme.palette.mode === 'dark'
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgba(0, 0, 0, 0.05)',
+        ...commonHoverBg(theme),
     },
 });
 
@@ -83,10 +80,8 @@ export const brandNameStyle = (theme: Theme) => ({
     background: 'linear-gradient(45deg, #fff 30%, rgba(255,255,255,0.8) 90%)',
     backgroundClip: 'text',
     textFillColor: 'transparent',
-    transition: 'all 0.3s ease',
-    '&:hover': {
-        transform: 'scale(1.05)',
-    },
+    ...commonTransition,
+    '&:hover': {transform: 'scale(1.05)'},
 });
 
 export const toolbarStyle = (theme: Theme, options?: { justifyContent?: string; flexWrap?: string }) => ({
@@ -98,21 +93,15 @@ export const toolbarStyle = (theme: Theme, options?: { justifyContent?: string; 
 
 export const toggleSwitchBoxStyle = {
     flexGrow: 0,
-    transition: 'all 0.3s ease',
-    '&:hover': {
-        transform: 'scale(1.1)',
-    },
+    ...commonTransition,
+    '&:hover': {transform: 'scale(1.1)'},
 };
 
 export const bottomAppBarStyle = (theme: Theme) => ({
-    ...appBarStyle(theme), // Reference basic appBar styling
+    ...appBarStyle(theme),
     top: 'auto',
     bottom: 0,
-    borderTop: `1px solid ${
-        theme.palette.mode === 'dark'
-            ? 'rgba(255, 255, 255, 0.12)'
-            : 'rgba(0, 0, 0, 0.12)'
-    }`,
+    borderTop: `1px solid ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.12)'}`,
 });
 
 export const footerButtonStyle = (theme: Theme) => ({
@@ -123,19 +112,14 @@ export const footerButtonStyle = (theme: Theme) => ({
 export const versionNumberStyle = (theme: Theme) => ({
     display: 'inline-flex',
     alignItems: 'center',
-    paddingX: theme.spacing(2),
-    paddingY: theme.spacing(0.5),
+    padding: `${theme.spacing(0.5)} ${theme.spacing(2)}`,
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.mode === 'dark'
-        ? 'rgba(255, 255, 255, 0.1)'
-        : 'rgba(0, 0, 0, 0.05)',
+    ...commonHoverBg(theme),
     fontFamily: 'monospace',
     fontWeight: theme.typography.fontWeightMedium,
-    transition: 'all 0.3s ease',
+    ...commonTransition,
     '&:hover': {
-        backgroundColor: theme.palette.mode === 'dark'
-            ? 'rgba(255, 255, 255, 0.15)'
-            : 'rgba(0, 0, 0, 0.08)',
+        backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.08)',
         transform: 'scale(1.05)',
     },
 });
@@ -143,7 +127,7 @@ export const versionNumberStyle = (theme: Theme) => ({
 export const flexContainerStyle = (theme: Theme, options?: {
     gap?: number;
     alignItems?: string;
-    flexWrap?: string
+    flexWrap?: string;
 }) => ({
     display: 'flex',
     alignItems: options?.alignItems || 'center',
@@ -172,10 +156,8 @@ export const blurbGridContainerStyle = (theme: Theme) => ({
 export const infoCardStyle = (theme: Theme) => ({
     padding: theme.spacing(3),
     height: '100%',
-    transition: 'transform 0.2s ease-in-out',
-    '&:hover': {
-        transform: 'translateY(-4px)',
-    },
+    ...commonTransition,
+    '&:hover': {transform: 'translateY(-4px)'},
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -187,7 +169,7 @@ export const infoCardIconStyle = (theme: Theme) => ({
     color: theme.palette.primary.main,
 });
 
-export const infoCardTitleStyle = (theme: Theme) => ({
+export const infoCardTitleStyle = () => ({
     fontWeight: 'bold',
 });
 
@@ -195,44 +177,37 @@ export const infoCardIconSizeStyle = {
     fontSize: 40,
 };
 
-// Style for the outer Card component
 export const pluginCardStyle = {
     height: '18rem',
     display: 'flex',
     flexDirection: 'column',
 };
 
-// Style for the CardContent component
 export const pluginCardContentStyle = {
     flexGrow: 1,
 };
 
-// Style for the CardActions component
 export const pluginCardActionsStyle = {
     flexGrow: 0,
 };
 
-// Style for the Button component within the actions
-export const pluginCardButtonStyle = (theme: Theme) => ({
+export const pluginCardButtonStyle = () => ({
     variant: 'contained',
     size: 'small',
-    textTransform: 'none', // Optional: Ensure buttons do not have uppercase text
+    textTransform: 'none',
 });
 
-// Typography styles for the title
 export const pluginCardTitleStyle = {
     gutterBottom: true,
     variant: 'h5',
     component: 'div',
 };
 
-// Typography styles for the description
 export const pluginCardDescriptionStyle = {
     variant: 'body2',
     color: 'text.secondary',
 };
 
-// Typography styles for server count display
 export const pluginCardServerCountStyle = {
     variant: 'body2',
     color: 'text.secondary',

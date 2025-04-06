@@ -194,3 +194,46 @@ export const infoCardTitleStyle = (theme: Theme) => ({
 export const infoCardIconSizeStyle = {
     fontSize: 40,
 };
+
+// Style for the outer Card component
+export const pluginCardStyle = {
+    height: '18rem',
+    display: 'flex',
+    flexDirection: 'column',
+};
+
+// Style for the CardContent component
+export const pluginCardContentStyle = {
+    flexGrow: 1,
+};
+
+// Style for the CardActions component
+export const pluginCardActionsStyle = {
+    flexGrow: 0,
+};
+
+// Style for the Button component within the actions
+export const pluginCardButtonStyle = (theme: Theme) => ({
+    variant: 'contained',
+    size: 'small',
+    textTransform: 'none', // Optional: Ensure buttons do not have uppercase text
+});
+
+// Typography styles for the title
+export const pluginCardTitleStyle = {
+    gutterBottom: true,
+    variant: 'h5',
+    component: 'div',
+};
+
+// Typography styles for the description
+export const pluginCardDescriptionStyle = {
+    variant: 'body2',
+    color: 'text.secondary',
+};
+
+// Typography styles for server count display
+export const pluginCardServerCountStyle = {
+    variant: 'body2',
+    color: 'text.secondary',
+};

@@ -3,7 +3,6 @@ import React, {useContext} from 'react';
 import {ColorModeToggleSwitch} from './ColorModeToggleSwitch';
 import {ColorModeContext} from '../utils/ColorModeContext';
 
-// Import styles
 import {
     appBarStyle,
     navButtonStyle,
@@ -13,7 +12,6 @@ import {
     flexContainerStyle
 } from '../styles/styles';
 
-// Enhanced button component with hover effects
 const NavButton: React.FC<{ href: string; children: React.ReactNode }> = ({href, children}) => (
     <Button
         color="inherit"
@@ -24,7 +22,6 @@ const NavButton: React.FC<{ href: string; children: React.ReactNode }> = ({href,
     </Button>
 );
 
-// Component for the brand name
 const BrandName: React.FC = () => (
     <Typography
         variant="h6"
@@ -52,12 +49,7 @@ const TopBar: React.FC = () => {
                     <Box sx={(theme) => flexContainerStyle(theme, {gap: 1})}>
                         <NavButton href="/">Home</NavButton>
                         <NavButton href="/guides">Guides</NavButton>
-                        <NavButton href="https://github.com/Dans-Plugins">GitHub</NavButton>
                         <NavButton href="https://discord.gg/xXtuAQ2">Discord</NavButton>
-                        <NavButton
-                            href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/">
-                            Playtest Server
-                        </NavButton>
                         <NavButton href="https://www.patreon.com/danspluginscommunity">Patreon</NavButton>
                         <NavButton href="https://www.linkedin.com/company/dansplugins">LinkedIn</NavButton>
                         <NavButton href="https://github.com/RP-Kit/RPKit">RPKit</NavButton>

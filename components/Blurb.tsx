@@ -14,9 +14,25 @@ import {
     infoCardIconSizeStyle
 } from '../styles/styles';
 
-const InfoCard: React.FC<{ icon: React.ReactNode; title: string; content: string }> = ({icon, title, content}) => (
+const InfoCard: React.FC<{
+    icon: React.ReactNode;
+    title: string;
+    content: string;
+    href?: string
+}> = ({icon, title, content, href}) => (
     <Grid item xs={12} md={4}>
-        <Paper elevation={3} sx={(theme) => infoCardStyle(theme)}>
+        <Paper
+            elevation={3}
+            sx={(theme) => ({
+                ...infoCardStyle(theme),
+                cursor: href ? 'pointer' : 'default',
+                '&:hover': href ? {
+                    transform: 'scale(1.02)',
+                    transition: 'transform 0.2s ease-in-out'
+                } : {}
+            })}
+            onClick={() => href && window.open(href, '_blank')}
+        >
             <Box sx={(theme) => infoCardIconStyle(theme)}>
                 {icon}
             </Box>
@@ -43,16 +59,19 @@ const Blurb: React.FC = () => (
                 icon={<GitHubIcon sx={infoCardIconSizeStyle}/>}
                 title="Contribute"
                 content="Join our open-source community on GitHub. Check out the CONTRIBUTING.md in each project to get started."
+                href="https://github.com/Dans-Plugins"
             />
             <InfoCard
                 icon={<DownloadIcon sx={infoCardIconSizeStyle}/>}
                 title="Download"
                 content="Get our plugins from SpigotMC. Each plugin page contains detailed installation instructions and documentation."
+                href="https://www.spigotmc.org/resources/authors/danthetechman.659208/"
             />
             <InfoCard
                 icon={<GamesIcon sx={infoCardIconSizeStyle}/>}
                 title="Try it Out"
                 content="Join our playtest server at dansplugins.com to experience our plugins in action!"
+                href="https://www.planetminecraft.com/server/dan-s-plugins-community-playtest-server/"
             />
         </Grid>
     </Box>

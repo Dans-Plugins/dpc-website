@@ -64,16 +64,6 @@ const DansEssentials: React.FC = () => (
     />
 )
 
-const DansSetHome: React.FC = () => (
-    <PluginCard
-        title="Dan's Set Home"
-        description="Allows players to set and teleport to home locations."
-        githubLink="https://github.com/Dans-Plugins/Dans-Set-Home"
-        spigotmcLink="https://www.spigotmc.org/resources/dans-set-home.79986/"
-        bStatsId="12126"
-    />
-)
-
 const DansSpawnSystem: React.FC = () => (
     <PluginCard
         title="Dan's Spawn System"
@@ -81,16 +71,6 @@ const DansSpawnSystem: React.FC = () => (
         githubLink="https://github.com/Dans-Plugins/Dans-Spawn-System"
         spigotmcLink="https://www.spigotmc.org/resources/dans-spawn-system.82697/"
         bStatsId="12161"
-    />
-)
-
-const Democracy: React.FC = () => (
-    <PluginCard
-        title="Democracy"
-        description="An expansion for MF that aims to allow nations to be democratic."
-        githubLink="https://github.com/Dans-Plugins/Democracy"
-        // no spigotmc link yet
-        // no bStats ID yet
     />
 )
 
@@ -114,16 +94,6 @@ const FoodSpoilage: React.FC = () => (
     />
 )
 
-const KDRTracker: React.FC = () => (
-    <PluginCard
-        title="KDRTracker"
-        description="Keeps track of players' kill/death ratios."
-        githubLink="https://github.com/Dans-Plugins/KDRTracker"
-        // no spigotmc link yet
-        // no bStats ID yet
-    />
-)
-
 const Mailboxes: React.FC = () => (
     <PluginCard
         title="Mailboxes"
@@ -141,16 +111,6 @@ const MedievalCookery: React.FC = () => (
         githubLink="https://github.com/Dans-Plugins/Medieval-Cookery"
         // no spigotmc link yet
         // no bStats ID yet
-    />
-)
-
-const MedievalEconomy: React.FC = () => (
-    <PluginCard
-        title="Medieval Economy"
-        description="Provides a virtual coinpurse and a physical currency item for the purpose of simulating an economy."
-        githubLink="https://github.com/Dans-Plugins/Medieval-Economy"
-        spigotmcLink="https://www.spigotmc.org/resources/medieval-economy.81836/"
-        bStatsId="8998"
     />
 )
 
@@ -201,16 +161,6 @@ const NoMoreCreepers: React.FC = () => (
         githubLink="https://github.com/Dans-Plugins/NoMoreCreepers"
         spigotmcLink="https://www.spigotmc.org/resources/nomorecreepers.97946/"
         bStatsId="13432"
-    />
-)
-
-const PlayerLore: React.FC = () => (
-    <PluginCard
-        title="PlayerLore"
-        description="Aims to allow players to add lore to their items in Minecraft."
-        githubLink="https://github.com/Dans-Plugins/PlayerLore"
-        spigotmcLink="https://www.spigotmc.org/resources/playerlore.98602/"
-        bStatsId="17025"
     />
 )
 
@@ -280,13 +230,7 @@ const AllPlugins: React.FC = () => (
                 <DansEssentials/>
             </Grid>
             <Grid item {...gridItemStyle}>
-                <DansSetHome/>
-            </Grid>
-            <Grid item {...gridItemStyle}>
                 <DansSpawnSystem/>
-            </Grid>
-            <Grid item {...gridItemStyle}>
-                <Democracy/>
             </Grid>
             <Grid item {...gridItemStyle}>
                 <Fiefs/>
@@ -295,16 +239,10 @@ const AllPlugins: React.FC = () => (
                 <FoodSpoilage/>
             </Grid>
             <Grid item {...gridItemStyle}>
-                <KDRTracker/>
-            </Grid>
-            <Grid item {...gridItemStyle}>
                 <Mailboxes/>
             </Grid>
             <Grid item {...gridItemStyle}>
                 <MedievalCookery/>
-            </Grid>
-            <Grid item {...gridItemStyle}>
-                <MedievalEconomy/>
             </Grid>
             <Grid item {...gridItemStyle}>
                 <MedievalFactions/>
@@ -320,9 +258,6 @@ const AllPlugins: React.FC = () => (
             </Grid>
             <Grid item {...gridItemStyle}>
                 <NoMoreCreepers/>
-            </Grid>
-            <Grid item {...gridItemStyle}>
-                <PlayerLore/>
             </Grid>
             <Grid item {...gridItemStyle}>
                 <SimpleSkills/>

@@ -131,9 +131,9 @@
   ],
   "mostPopular": [
     "medieval-factions",
-    "medieval-roleplay-engine",
-    "food-spoilage",
     "wild-pets",
-    "currencies"
+    "medieval-roleplay-engine",
+    "currencies",
+    "food-spoilage"
   ]
 }

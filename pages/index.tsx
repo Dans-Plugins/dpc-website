@@ -31,6 +31,23 @@ const SectionDivider: React.FC = () => (
 // pull version from package.json
 const version = require('../package.json').version
 
+const VisitCounter: React.FC<{ visits: number }> = ({ visits }) => (
+    <Typography
+        variant="body2"
+        sx={{
+            position: 'fixed',
+            bottom: '80px',
+            right: '20px',
+            padding: '8px',
+            borderRadius: '4px',
+            backgroundColor: 'background.paper',
+            boxShadow: 1
+        }}
+    >
+        Page Visits: {visits}
+    </Typography>
+);
+
 interface Plugin {
     id: string;
     title: string;
@@ -80,7 +97,28 @@ const AllPlugins: React.FC = () => (
     </Box>
 )
 
-const Home: NextPage = () => {
+export const getServerSideProps = async () => {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    // Increment visit count
+    await fetch(`${baseUrl}/api/visits`, { method: 'POST' });
+
+    // Get updated count
+    const response = await fetch(`${baseUrl}/api/visits`);
+    const data = await response.json();
+
+    return {
+        props: {
+            visits: data.visits
+        }
+    };
+};
+
+interface HomeProps {
+    visits: number;
+}
+
+const Home: NextPage<HomeProps> = ({ visits }) => {
     return (
         <Box sx={pageStyle}>
             <TopBar/>
@@ -90,6 +128,7 @@ const Home: NextPage = () => {
                 <MostPopularPlugins/>
                 <SectionDivider/>
                 <AllPlugins/>
+                <VisitCounter visits={visits} />
             </Container>
             <BottomBar version={version}/>
         </Box>

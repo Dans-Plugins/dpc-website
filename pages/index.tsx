@@ -5,6 +5,7 @@ import Blurb from '../components/Blurb'
 import PluginCard from '../components/PluginCard'
 import React from 'react';
 import BottomBar from '../components/BottomBar'
+import { getVisits, incrementVisits } from '../services/visitService';
 
 interface PluginData {
     mostPopular: string[];
@@ -80,7 +81,24 @@ const AllPlugins: React.FC = () => (
     </Box>
 )
 
-const Home: NextPage = () => {
+interface HomeProps {
+    visits: number;
+    startDate: string;
+}
+
+export const getServerSideProps = async () => {
+    await incrementVisits();
+    const data = await getVisits();
+
+    return {
+        props: {
+            visits: data.visits,
+            startDate: data.startDate
+        }
+    };
+};
+
+const Home: NextPage<HomeProps> = ({ visits, startDate }) => {
     return (
         <Box sx={pageStyle}>
             <TopBar/>
@@ -91,7 +109,11 @@ const Home: NextPage = () => {
                 <SectionDivider/>
                 <AllPlugins/>
             </Container>
-            <BottomBar version={version}/>
+            <BottomBar
+                version={version}
+                visits={visits}
+                startDate={startDate}
+            />
         </Box>
     );
 };

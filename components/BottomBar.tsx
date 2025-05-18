@@ -33,18 +33,38 @@ const VersionNumber: React.FC<{ version: string }> = ({version}) => (
 );
 
 interface BottomBarProps {
-    version: string
+    version: string;
+    visits?: number;
+    startDate?: string;
 }
 
-const BottomBar: React.FC<BottomBarProps> = ({version}) => {
+const BottomBar: React.FC<BottomBarProps> = ({version, visits, startDate}) => {
     const colorMode = useContext(ColorModeContext);
     const theme = useTheme();
+
+    const formattedDate = startDate ? new Date(startDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }) : null;
 
     return (
         <AppBar position="static" sx={(theme) => bottomAppBarStyle(theme)}>
             <Toolbar sx={(theme) => toolbarStyle(theme)}>
                 <Box sx={(theme) => flexContainerStyle(theme)}>
-                    <VersionNumber version={version}/>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                        <VersionNumber version={version}/>
+                        {visits !== undefined && startDate && (
+                            <>
+                                <Typography variant="body2" color="inherit">
+                                    •
+                                </Typography>
+                                <Typography variant="body2" color="inherit">
+                                    {visits} visits since {formattedDate}
+                                </Typography>
+                            </>
+                        )}
+                    </Box>
 
                     <Box sx={(theme) => flexContainerStyle(theme, {gap: 1})}>
                         <FooterButton

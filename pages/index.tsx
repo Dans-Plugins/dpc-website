@@ -5,7 +5,6 @@ import Blurb from '../components/Blurb'
 import PluginCard from '../components/PluginCard'
 import React from 'react';
 import BottomBar from '../components/BottomBar'
-import VisitCounter from '../components/VisitCounter';
 import { getVisits, incrementVisits } from '../services/visitService';
 
 interface PluginData {
@@ -109,9 +108,12 @@ const Home: NextPage<HomeProps> = ({ visits, startDate }) => {
                 <MostPopularPlugins/>
                 <SectionDivider/>
                 <AllPlugins/>
-                <VisitCounter visits={visits} startDate={startDate} />
             </Container>
-            <BottomBar version={version}/>
+            <BottomBar
+                version={version}
+                visits={visits}
+                startDate={startDate}
+            />
         </Box>
     );
 };

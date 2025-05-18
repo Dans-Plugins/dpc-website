@@ -12,6 +12,7 @@ RUN npm install
 COPY components ./components
 COPY pages ./pages
 COPY public ./public
+COPY services ./services
 COPY styles ./styles
 COPY utils ./utils
 COPY next-env.d.ts ./

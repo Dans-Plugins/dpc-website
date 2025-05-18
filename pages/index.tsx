@@ -5,6 +5,8 @@ import Blurb from '../components/Blurb'
 import PluginCard from '../components/PluginCard'
 import React from 'react';
 import BottomBar from '../components/BottomBar'
+import VisitCounter from '../components/VisitCounter';
+import { getVisits, incrementVisits } from '../services/visitService';
 
 interface PluginData {
     mostPopular: string[];
@@ -30,23 +32,6 @@ const SectionDivider: React.FC = () => (
 
 // pull version from package.json
 const version = require('../package.json').version
-
-const VisitCounter: React.FC<{ visits: number }> = ({ visits }) => (
-    <Typography
-        variant="body2"
-        sx={{
-            position: 'fixed',
-            bottom: '80px',
-            right: '20px',
-            padding: '8px',
-            borderRadius: '4px',
-            backgroundColor: 'background.paper',
-            boxShadow: 1
-        }}
-    >
-        Page Visits: {visits}
-    </Typography>
-);
 
 interface Plugin {
     id: string;
@@ -98,18 +83,12 @@ const AllPlugins: React.FC = () => (
 )
 
 export const getServerSideProps = async () => {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-
-    // Increment visit count
-    await fetch(`${baseUrl}/api/visits`, { method: 'POST' });
-
-    // Get updated count
-    const response = await fetch(`${baseUrl}/api/visits`);
-    const data = await response.json();
+    await incrementVisits();
+    const visits = await getVisits();
 
     return {
         props: {
-            visits: data.visits
+            visits
         }
     };
 };

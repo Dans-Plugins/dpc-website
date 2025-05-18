@@ -38,7 +38,7 @@ yarn-error.log*
 ./data
 
 #iml
-/.iml
+*.iml
 
 #xml
 *.xml

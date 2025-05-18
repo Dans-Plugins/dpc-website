@@ -82,22 +82,24 @@ const AllPlugins: React.FC = () => (
     </Box>
 )
 
+interface HomeProps {
+    visits: number;
+    startDate: string;
+}
+
 export const getServerSideProps = async () => {
     await incrementVisits();
-    const visits = await getVisits();
+    const data = await getVisits();
 
     return {
         props: {
-            visits
+            visits: data.visits,
+            startDate: data.startDate
         }
     };
 };
 
-interface HomeProps {
-    visits: number;
-}
-
-const Home: NextPage<HomeProps> = ({ visits }) => {
+const Home: NextPage<HomeProps> = ({ visits, startDate }) => {
     return (
         <Box sx={pageStyle}>
             <TopBar/>
@@ -107,7 +109,7 @@ const Home: NextPage<HomeProps> = ({ visits }) => {
                 <MostPopularPlugins/>
                 <SectionDivider/>
                 <AllPlugins/>
-                <VisitCounter visits={visits} />
+                <VisitCounter visits={visits} startDate={startDate} />
             </Container>
             <BottomBar version={version}/>
         </Box>

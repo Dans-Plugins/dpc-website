@@ -87,3 +87,11 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+### Why MIT?
+We chose the MIT License because it’s **simple, permissive, and widely used**. It allows anyone to use, modify, and distribute the code — even in proprietary projects — as long as the original copyright and license notice are included.  
+This helps maximize **adoption**, **collaboration**, and **contribution** by keeping barriers low while still ensuring attribution.
